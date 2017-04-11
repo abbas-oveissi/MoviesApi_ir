@@ -1,0 +1,20 @@
+@font-face {
+    font-family: VazirFamily;
+    font-style: normal;
+    font-weight: bold;
+    src: url('fonts/Vazir_Bold.woff') format('woff');   /* All Major Browsers */
+}
+
+@font-face {
+    font-family: VazirFamily;
+    font-style: normal;
+    font-weight: 300;
+    src: url('fonts/Vazir_Light.woff') format('woff');   /* All Major Browsers */
+}
+
+@font-face {
+    font-family: VazirFamily;
+    font-style: normal;
+    font-weight: normal;
+    src: url('fonts/Vazir.woff') format('woff');   /* All Major Browsers */
+}
