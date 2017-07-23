@@ -170,6 +170,7 @@ return [
         Ixudra\Curl\CurlServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        Laravel\Passport\PassportServiceProvider::class,
 
 
         //
