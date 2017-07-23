@@ -17,6 +17,7 @@ class AddClientSecret
     public function handle($request, Closure $next)
     {
         $url=str_replace(URL::to('/'),"",$request->url());
+
         if($url=="/oauth/token")
         {
             $input = $request->all();
