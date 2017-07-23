@@ -21,7 +21,7 @@ class AddClientSecret
         {
             $input = $request->all();
             $input['client_id'] = 2;
-            $input['client_secret'] = "CUSLieIPlfuqb3BEBZcMoQUg5EnobZ2Dy3wSVPQR";
+            $input['client_secret'] = "";
             $request->merge($input);
             return $next($request);
         }
