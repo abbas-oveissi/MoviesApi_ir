@@ -9,7 +9,8 @@
         "laravel/framework": "5.3.*",
         "ixudra/curl": "6.*",
         "intervention/image": "^2.3",
-        "laravelcollective/html":"^5.3.0"
+        "laravelcollective/html":"^5.3.0",
+        "laravel/passport": "~1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
