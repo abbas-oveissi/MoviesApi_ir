@@ -28,3 +28,6 @@ Route::post('/',
 Route::get('movies', function () {
     return view('form');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@getIndex');
