@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -67,5 +68,42 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+    public function register(Request $request)
+    {
+        $errors =Validator::make($request->all(), [
+            'name' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:users',
+            'password' => 'required|min:6',
+        ])->errors();
+        if (!empty($errors->all())) {
+            $arrErrors=$errors->toArray();
+            $errText="";
+            if(isset($arrErrors['email']))
+            {
+                $errText.=$arrErrors['email'][0].';';
+
+            }
+            if(isset($arrErrors['password']))
+            {
+                $errText.=$arrErrors['password'][0].';';
+
+            }
+            if(isset($arrErrors['name']))
+            {
+                $errText.=$arrErrors['name'][0].';';
+
+            }
+            return  response(json_encode(array("message"=>"Validation failed.","errors"=>$errText)), 422)
+                ->header('Content-Type', 'application/json');
+        } else {
+            return  response(json_encode(User::create([
+                'name' => $request->all()['name'],
+                'email' => $request->all()['email'],
+                'password' => bcrypt($request->all()['password']),
+            ])), 201)
+                ->header('Content-Type', 'application/json');
+        }
     }
 }

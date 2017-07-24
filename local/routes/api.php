@@ -17,12 +17,6 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:api');
 
 
-//Route::resource('movies', 'Api\v1\MovieController');
-//
-//Route::resource('genres', 'GenreController');
-//
-//Route::get('categories/{id}/books','CategoryController@categoryBooks');
-
 Route::group(['prefix' => 'v1'], function () {
     Route::get('genres/{id}/movies','Api\v1\GenreController@genreMovies');
 
@@ -31,10 +25,6 @@ Route::group(['prefix' => 'v1'], function () {
     Route::resource('genres', 'Api\v1\GenreController');
     Route::post('movies', 'Api\v1\MovieController@storeBase64');
     Route::post('movies/multi', 'Api\v1\MovieController@storeMulti');
+    Route::post('register', 'Auth\RegisterController@register');
 
 });
-//
-//Route::group(['prefix' => 'api/v2'], function () {
-//    Route::get('user',      'Api\v2\UserController@index');
-//    Route::get('user/{id}', 'Api\v2\UserController@show');
-//});
