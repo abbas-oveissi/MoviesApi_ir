@@ -40,7 +40,7 @@
 
 <pre dir="ltr">php artisan key:generate</pre>
 
-7. دستور ساخت کلید‌های رمزنگاری برای ساخت access token امن و دو کلاینت password grant و personal access
+7. دستور ساخت کلید‌های رمزگذاری برای ساخت access token امن و دو کلاینت password grant و personal access
 
 <pre dir="ltr">php artisan passport:install</pre>
 
