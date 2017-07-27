@@ -44,7 +44,7 @@
 
 <pre dir="ltr">php artisan passport:install</pre>
 
-8.با استفاده از secret ساخته شده برای کلاینت password grant در مرحله‌ی قبل، فایل AddClientSecret.php را ویرایش کنید و secret خود را در آنجا بنویسید. این فایل در مسیر زیر قرار دارد.
+8. با استفاده از secret ساخته شده برای کلاینت password grant در مرحله‌ی قبل، فایل AddClientSecret.php را ویرایش کنید و secret خود را در آنجا بنویسید. این فایل در مسیر زیر قرار دارد.
 
 <pre dir="ltr">/local/app/Http/Middleware</pre>
 
