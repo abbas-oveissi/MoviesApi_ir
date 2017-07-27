@@ -40,14 +40,14 @@
 
 <pre dir="ltr">php artisan key:generate</pre>
 
-6. دستور ساخت کلید‌های رمزنگاری برای ساخت access token امن و دو کلاینت password grant و personal access
+7. دستور ساخت کلید‌های رمزنگاری برای ساخت access token امن و دو کلاینت password grant و personal access
 
 <pre dir="ltr">php artisan passport:install</pre>
 
-7.با استفاده از secret ساخته شده برای کلاینت password grant در مرحله‌ی قبل، فایل AddClientSecret.php را ویرایش کنید و secret خود را در آنجا بنویسید. این فایل در مسیر زیر قرار دارد.
+8.با استفاده از secret ساخته شده برای کلاینت password grant در مرحله‌ی قبل، فایل AddClientSecret.php را ویرایش کنید و secret خود را در آنجا بنویسید. این فایل در مسیر زیر قرار دارد.
 
 <pre dir="ltr">/local/app/Http/Middleware</pre>
 
-7. اگر می‌خواهید اطلاعات ۱۵ فیلم برتر به همراه ژانرشان در جدول‌ها ثبت شود، دستور زیر را اجرا کنید.
+9. اگر می‌خواهید اطلاعات ۱۵ فیلم برتر به همراه ژانرشان در جدول‌ها ثبت شود، دستور زیر را اجرا کنید.
 
 <pre dir="ltr">php artisan db:seed</pre>
