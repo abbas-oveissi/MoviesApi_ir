@@ -299,7 +299,6 @@ class MoviesService
             $object->plot = $movie->plot;
             $object->country = $movie->country;
             $object->awards = $movie->awards;
-            $object->poster = $movie->poster;
             $object->metascore = $movie->metascore;
             $object->imdb_rating = $movie->imdb_rating;
             $object->imdb_votes = $movie->imdb_votes;
