@@ -35,7 +35,7 @@ class MovieController extends Controller
 
         if(is_null($page)||$page<1)
         {
-            $page=1;
+            $page="1";
         }
 
         $terms = $request->input('q');

@@ -100,7 +100,7 @@ class GenreController extends Controller
 
         if(is_null($page)||$page<1)
         {
-            $page=1;
+            $page="1";
         }
         return response()->json($this->moviesService->getMoviesByGenreId($id,$page));
     }
