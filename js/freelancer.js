@@ -18,6 +18,10 @@
         offset: 51
     });
 
+    $('pre').each(function () {
+        $(this).jsonBrowse(JSON.parse($(this).html()));
+    });
+
     // Closes the Responsive Menu on Menu Item Click
     $('.navbar-collapse ul li a').click(function(){ 
             $('.navbar-toggle:visible').click();
@@ -28,7 +32,7 @@
         offset: {
             top: 100
         }
-    })
+    });
 
     // Floating label headings for the contact form
     $(function() {
@@ -41,4 +45,23 @@
         });
     });
 
+    $(".copy-btn").click(function () {
+        var self = $(this);
+        const el = document.createElement('textarea');
+        el.value = self.attr('rel-data');
+        el.setAttribute('readonly', '');
+        el.style.position = 'absolute';
+        el.style.left = '-9999px';
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+
+        self.popover('show');
+        setTimeout(function(){
+            self.popover('hide');
+        }, 400);
+    });
+
 })(jQuery); // End of use strict
+

@@ -75,6 +75,9 @@ hr.star-light:after {
 hr.star-primary {
     border-color: #2C3E50;
 }
+.success hr.star-primary {
+    border-color: #fff;
+}
 
 hr.star-primary:after {
     background-color: white;
@@ -619,25 +622,25 @@ fieldset[disabled] .btn-success.active {
     padding: 30px;
 }
 
-.api-box UL{
+.api-box UL.api-list{
     float: right;
     margin-top: 20px;
     padding: 20px 30px;
     border: 1px solid #ddd;
     min-width: 300px;
 }
-.api-box UL LI {
+.api-box UL.api-list LI {
     list-style: none;
 }
-.api-box UL LI A{
+.api-box UL.api-list LI A{
     color: #333;
     font-size: 16px;
     line-height: 2;
 }
-.api-box UL LI A:hover,.api-box UL LI A:focus{
+.api-box UL.api-list LI A:hover,.api-box UL LI A:focus{
     color: #18BC9C;
 }
-.api-box UL LI A .fa{
+.api-box UL.api-list LI A .fa{
     margin-left: 2px;
     font-size: 9px;
 }
@@ -675,6 +678,18 @@ fieldset[disabled] .btn-success.active {
     font-weight: 500;
     margin: 7px;
     direction: ltr;
+}
+.copy-btn{
+    background: #0086f9;
+    color: #fff;
+    padding: 7px 10px;
+    margin-top: -1px;
+    display: inline-block;
+    float: right;
+    border-radius: 2px;
+    border: 0;
+    outline: none!important;
+
 }
 
 .title {
@@ -737,6 +752,29 @@ PRE{
     float: right;
     margin-top: 20px;
     margin-bottom: 30px;
+}
+.popover{
+    font-family: VazirFamily;
+    font-size: 11px;
+    border-radius: 4px;
+    background: #a6d6ff;
+}
+.popover-content {
+    padding: 6px 12px;
+}
+.popover.left{
+    margin-left: -6px;
+}
+.popover.left>.arrow{
+    right: -10px;
+    margin-top: -5px;
+    border-width: 5px;
+}
+.popover.left>.arrow:after{
+    border-width: 4px;
+    bottom: -4px;
+    right: -3px;
+    border-left-color: #a6d6ff;
 }
 
 @media (min-width: 768px) {
