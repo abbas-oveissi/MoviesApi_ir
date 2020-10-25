@@ -22,7 +22,7 @@
     <link href="{{ url('/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ url('/vendor/vazirfont/vazir.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ url('/vendor/beautify-json/jquery.json-browse.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ url('/css/freelancer.min.css') }}" rel="stylesheet">
+    <link href="{{ url('/css/freelancer.css') }}" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -126,6 +126,9 @@
 <!-- About Section -->
 @include('sections.goal')
 
+<!-- Samples Section -->
+@include('sections.samples')
+
 <!-- Contact Section -->
 @include('sections.contact')
 
@@ -136,7 +139,7 @@
 <script src="{{ url('/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 <script src="{{ url('/vendor/beautify-json/jquery.json-browse.js') }}"></script>
-<script src="{{ url('/js/freelancer.min.js') }}"></script>
+<script src="{{ url('/js/freelancer.js') }}"></script>
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

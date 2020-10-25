@@ -220,7 +220,15 @@ class HomeController extends Controller
                 'response' => '{"data":[{"id":1,"title":"The Shawshank Redemption","poster":"http://moviesapi.ir/images/tt0111161_poster.jpg","genres":["Crime","Drama"],"images":["http://moviesapi.ir/images/tt0111161_screenshot1.jpg","http://moviesapi.ir/images/tt0111161_screenshot2.jpg","http://moviesapi.ir/images/tt0111161_screenshot3.jpg"]},{"id":2,"title":"The Godfather","poster":"http://moviesapi.ir/images/tt0068646_poster.jpg","genres":["Crime","Drama"],"images":["http://moviesapi.ir/images/tt0068646_screenshot1.jpg","http://moviesapi.ir/images/tt0068646_screenshot2.jpg","http://moviesapi.ir/images/tt0068646_screenshot3.jpg"]}],"metadata":{"current_page":1,"per_page":2,"page_count":25,"total_count":250}}'
             ]
         ];
-        return view('welcome', compact('apiList'));
+        $projects = [
+            [
+                'url'=>'http://moviesapi.ir',
+                'title'=>'وب سرویس فیلم ها',
+                'description'=>'نمونه api برای تازه واردان عرصه برنامه نویسی'
+            ]
+        ];
+        return view('welcome', compact('apiList', 'projects'));
+
     }
 
     public function postIndex(Request $request)

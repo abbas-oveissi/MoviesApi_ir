@@ -1,4 +1,4 @@
-<section id="contact">
+<section class="success" id="contact">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
@@ -54,7 +54,7 @@
                     <div id="success"></div>
                     <div class="row">
                         <div class="form-group col-xs-12">
-                            <button type="submit" class="btn btn-success btn-lg">ارسال</button>
+                            <button type="submit" class="btn btn-default btn-lg">ارسال</button>
                         </div>
                     </div>
                 </form>

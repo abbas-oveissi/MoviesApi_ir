@@ -744,6 +744,7 @@ PRE{
     border-color: #ddd;
     white-space: pre-wrap;
     word-wrap: break-word;
+    padding-left: 25px;
 }
 
 .separator{
@@ -775,6 +776,45 @@ PRE{
     bottom: -4px;
     right: -3px;
     border-left-color: #a6d6ff;
+}
+
+.success ::-webkit-input-placeholder { /* Edge */
+    color: #fff;
+}
+.success :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #fff;
+}
+.success ::placeholder {
+    color: #fff;
+}
+
+.sample-box{
+    border: 1px solid #18bc9c;
+    display: block;
+    text-align: center;
+    padding: 50px 0;
+    margin-bottom: 30px;
+}
+.sample-box .sample-title{
+    color: #18bc9c;
+    margin: 5px 0 30px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.sample-box .sample-description{
+    color: #333;
+    text-align: center;
+    font-size: 14px;
+}
+.sample-box:hover{
+    border-color: #2C3E50;
+}
+.sample-box:hover .sample-title{
+    color: #2C3E50;
+}
+.sample-box:hover .sample-description{
+    color: #000;
 }
 
 @media (min-width: 768px) {
