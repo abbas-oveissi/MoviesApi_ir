@@ -218,6 +218,62 @@ class HomeController extends Controller
                     ]
                 ],
                 'response' => '{"data":[{"id":1,"title":"The Shawshank Redemption","poster":"http://moviesapi.ir/images/tt0111161_poster.jpg","genres":["Crime","Drama"],"images":["http://moviesapi.ir/images/tt0111161_screenshot1.jpg","http://moviesapi.ir/images/tt0111161_screenshot2.jpg","http://moviesapi.ir/images/tt0111161_screenshot3.jpg"]},{"id":2,"title":"The Godfather","poster":"http://moviesapi.ir/images/tt0068646_poster.jpg","genres":["Crime","Drama"],"images":["http://moviesapi.ir/images/tt0068646_screenshot1.jpg","http://moviesapi.ir/images/tt0068646_screenshot2.jpg","http://moviesapi.ir/images/tt0068646_screenshot3.jpg"]}],"metadata":{"current_page":1,"per_page":2,"page_count":25,"total_count":250}}'
+            ],
+            [
+                'id' => 'api-p8',
+                'title' => 'لاگین و دریافت توکن',
+                'description' => 'با استفاده از این متد می‌توانید در سیستم لاگین کرده و با دریافت توکن، از متدهایی که به توکن نیاز دارند استفاده کنید.',
+                'method' => 'POST',
+                'url' => '/oauth/token',
+                'params' => [
+                    [
+                        'mandatory' => '<span class="label label-warning">اجباری</span>',
+                        'name' => 'grant_type',
+                        'type' => 'رشته',
+                        'description' => 'از عبارت password برای این فیلد استفاده کنید'
+                    ],
+                    [
+                        'mandatory' => '<span class="label label-warning">اجباری</span>',
+                        'name' => 'username',
+                        'type' => 'رشته',
+                        'description' => 'نام کاربری'
+                    ],
+                    [
+                        'mandatory' => '<span class="label label-warning">اجباری</span>',
+                        'name' => 'password',
+                        'type' => 'رشته',
+                        'description' => 'رمز عبور'
+                    ]
+                ],
+                'response' => '{"token_type":"Bearer","expries_in":16537295,"access_token":"NJhsHG6TFC5kdTEM34cMzAxFtfs34x...","refresh_token":"eNUSyyhn3kmIJ64jnUH56DMsfNUhN4..."}'
+            ],
+            [
+                'id' => 'api-p9',
+                'title' => 'ثبت کاربر جدید',
+                'description' => 'قبل از لاگین کردن باید یک کاربر در وب‌سرویس بسازید. اطلاعات کاربر (نام، ایمیل و پسورد) رو باید با فرمت Json ارسال کنید.',
+                'method' => 'POST',
+                'url' => '/api/v1/register',
+                'params' => [
+                    [
+                        'mandatory' => '<span class="label label-warning">اجباری</span>',
+                        'name' => 'email',
+                        'type' => 'رشته',
+                        'description' => 'پست الکترونیکی کاربر'
+                    ],
+                    [
+                        'mandatory' => '<span class="label label-warning">اجباری</span>',
+                        'name' => 'password',
+                        'type' => 'رشته',
+                        'description' => 'رمز عبور'
+                    ],
+                    [
+                        'mandatory' => '<span class="label label-warning">اجباری</span>',
+                        'name' => 'name',
+                        'type' => 'رشته',
+                        'description' => 'نام کاربر'
+                    ]
+                ],
+                'response' => '{"id":23,"name":"Abbas Ov","email":"abbas@oveissi.ir","created_at":"2020-10-10 12:12:23","updated_at":"2020-10-10 12:12:23"}'
             ]
         ];
         $projects = [
