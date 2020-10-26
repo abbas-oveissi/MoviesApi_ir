@@ -221,8 +221,36 @@ class HomeController extends Controller
             ],
             [
                 'id' => 'api-p8',
+                'title' => 'ثبت کاربر جدید',
+                'description' => 'با استفاده از این متد می‌توانید یک کاربر جدید جدید در وب‌سرویس ثبت‌نام کنید. اطلاعات کاربر (نام، ایمیل و پسورد) باید با فرمت Json در ‌Body درخواست ارسال شوند.',
+                'method' => 'POST',
+                'url' => '/api/v1/register',
+                'params' => [
+                    [
+                        'mandatory' => '<span class="label label-warning">اجباری</span>',
+                        'name' => 'email',
+                        'type' => 'رشته',
+                        'description' => 'پست الکترونیکی کاربر'
+                    ],
+                    [
+                        'mandatory' => '<span class="label label-warning">اجباری</span>',
+                        'name' => 'password',
+                        'type' => 'رشته',
+                        'description' => 'رمز عبور'
+                    ],
+                    [
+                        'mandatory' => '<span class="label label-warning">اجباری</span>',
+                        'name' => 'name',
+                        'type' => 'رشته',
+                        'description' => 'نام کاربر'
+                    ]
+                ],
+                'response' => '{"id":23,"name":"Abbas Ov","email":"abbas@oveissi.ir","created_at":"2020-10-10 12:12:23","updated_at":"2020-10-10 12:12:23"}'
+            ],
+            [
+                'id' => 'api-p9',
                 'title' => 'لاگین و دریافت توکن',
-                'description' => 'با استفاده از این متد می‌توانید در سیستم لاگین کرده و با دریافت توکن، از متدهایی که به توکن نیاز دارند استفاده کنید.',
+                'description' => 'با استفاده از این متد می‌توانید در سیستم لاگین کرده و با دریافت توکن، از متدهایی که به توکن نیاز دارند استفاده کنید. توجه کنید اطلاعات بصورت form-data به وب‌سرویس ارسال شوند.',
                 'method' => 'POST',
                 'url' => '/oauth/token',
                 'params' => [
@@ -248,29 +276,45 @@ class HomeController extends Controller
                 'response' => '{"token_type":"Bearer","expries_in":16537295,"access_token":"NJhsHG6TFC5kdTEM34cMzAxFtfs34x...","refresh_token":"eNUSyyhn3kmIJ64jnUH56DMsfNUhN4..."}'
             ],
             [
-                'id' => 'api-p9',
-                'title' => 'ثبت کاربر جدید',
-                'description' => 'قبل از لاگین کردن باید یک کاربر در وب‌سرویس بسازید. اطلاعات کاربر (نام، ایمیل و پسورد) رو باید با فرمت Json ارسال کنید.',
+                'id' => 'api-p10',
+                'title' => 'رفرش کردن توکن',
+                'description' => 'متد لاگین به شما access_token و refresh_token میده. برای درخواست‌هایی که نیاز به توکن دارند باید از access_token استفاده کنید. هر access_token بعد ۵ دقیقه منقضی می‌شود. برای دریافت توکن جدید باید از این متد و refresh_token استفاده کنید تا access_token جدید بگیرید.',
                 'method' => 'POST',
-                'url' => '/api/v1/register',
+                'url' => '/oauth/token',
                 'params' => [
                     [
                         'mandatory' => '<span class="label label-warning">اجباری</span>',
-                        'name' => 'email',
+                        'name' => 'grant_type',
                         'type' => 'رشته',
-                        'description' => 'پست الکترونیکی کاربر'
+                        'description' => 'از عبارت refresh_token برای این فیلد استفاده کنید'
                     ],
                     [
                         'mandatory' => '<span class="label label-warning">اجباری</span>',
-                        'name' => 'password',
+                        'name' => 'refresh_token',
                         'type' => 'رشته',
-                        'description' => 'رمز عبور'
-                    ],
+                        'description' => 'رفرش توکن'
+                    ]
+                ],
+                'response' => '{"token_type":"Bearer","expries_in":16537295,"access_token":"NJhsHG6TFC5kdTEM34cMzAxFtfs34x...","refresh_token":"eNUSyyhn3kmIJ64jnUH56DMsfNUhN4..."}'
+            ],
+            [
+                'id' => 'api-p11',
+                'title' => 'گرفتن اطلاعات کاربر (نیاز به توکن دارد)',
+                'description' => 'با این متد می‌توانید اطلاعات کاربر را مشاهد کنید، این متد نیاز به توکن دارد که برای بدست آوردن آن باید از متد لاگین استفاده کنید.',
+                'method' => 'POST',
+                'url' => '/api/user',
+                'params' => [
                     [
                         'mandatory' => '<span class="label label-warning">اجباری</span>',
-                        'name' => 'name',
-                        'type' => 'رشته',
-                        'description' => 'نام کاربر'
+                        'name' => 'authorization',
+                        'type' => 'header-رشته',
+                        'description' => 'وقتی توکن رو توی Header میذارید، اون Bearer اولش یادتون نداره.'
+                    ],
+                    [
+                        'mandatory' => '<span class="label label-success">دلخواه</span>',
+                        'name' => 'accept',
+                        'type' => 'header-رشته',
+                        'description' => 'همیشه مقدار را application/json بذارید تا اگر خطایی رخ داد وب سرویس با فرمت Json پاسخ دهد.'
                     ]
                 ],
                 'response' => '{"id":23,"name":"Abbas Ov","email":"abbas@oveissi.ir","created_at":"2020-10-10 12:12:23","updated_at":"2020-10-10 12:12:23"}'
@@ -278,9 +322,9 @@ class HomeController extends Controller
         ];
         $projects = [
             [
-                'url'=>'http://moviesapi.ir',
-                'title'=>'وب سرویس فیلم ها',
-                'description'=>'نمونه api برای تازه واردان عرصه برنامه نویسی'
+                'url'=>'https://github.com/abbas-oveissi/SearchMovies',
+                'title'=>'SearchMovies (Android)',
+                'description'=>'This project is an example of MVP architecture pattern.'
             ]
         ];
         return view('welcome', compact('apiList', 'projects'));
