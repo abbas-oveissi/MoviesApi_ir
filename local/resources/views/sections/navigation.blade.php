@@ -24,7 +24,7 @@
                     <a href="#about">هدف پروژه</a>
                 </li>
                 <li class="page-scroll">
-                    <a href="#samples">نمونه پروژه ها</a>
+                    <a href="#samples">نمونه پروژه‌ها</a>
                 </li>
                 <li class="page-scroll">
                     <a href="#contact">تماس با ما</a>
