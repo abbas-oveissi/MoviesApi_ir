@@ -135,7 +135,7 @@ class MoviesService
         $object = new stdClass();
         $object->id = $movieDB->id;
         $object->title = $movieDB->title;
-        $object->poster  = URL::to('/')."/images/".$movie->poster;
+        $object->poster  = URL::to('/')."/images/".$movieDB->poster;
         $object->year = $movieDB->year;
         $object->director = $movieDB->director;
         $object->country = $movieDB->country;
